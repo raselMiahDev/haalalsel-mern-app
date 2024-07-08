@@ -16,14 +16,14 @@ const Header = () => {
 //     }
 //   }
 
-//   const Logout = async () => {
-//     setLogoutLoader(true)
-//     localStorage.clear()
-//     sessionStorage.clear()
-//     await UserLogout()
-//     setLogoutLoader(false);
-//     window.location.href="/"
-//   }
+  const Logout = async () => {
+    setLogoutLoader(true)
+    localStorage.clear()
+    sessionStorage.clear()
+    await UserLogout()
+    setLogoutLoader(false);
+    window.location.href="/"
+  }
 
 
   return (
