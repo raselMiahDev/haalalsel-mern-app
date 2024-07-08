@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ProductListByRemarkRequest } from "../../API/apiRequiest.js";
-import "../../assets/css/productCard.css";
 import ProductCard from "../Products/ProductCard.jsx";
-import ProductCardTwo from "../Products/ProductCardTwo.jsx";
 const Products = () => {
   const [data_new, setData_new] = useState([]);
   const [data_trending, setData_trending] = useState([]);
