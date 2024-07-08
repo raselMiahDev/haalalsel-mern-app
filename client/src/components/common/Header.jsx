@@ -1,12 +1,7 @@
-import React, {useEffect, useState} from "react";
-import logo from "../../assets/images/logo.svg";
-import {Link,} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
-// import toast, { Toaster } from 'react-hot-toast';
-// import {useNavigate} from "react-router-dom"
 import SubmitButton from "./SubmitButton.jsx";
-import TopHeader from "./TopHeader.jsx";
-// import {UserLogout} from "../apiRequest/apiRequest.js";
+import Logo from "../../assets/images/logo.png"
 const Header = () => {
 //   const [searchKeyword,setSearchKeyword]=useState("")
 //   const [logoutLoader,setLogoutLoader]=useState(false);
@@ -33,11 +28,10 @@ const Header = () => {
 
   return (
     <div>
-      <TopHeader/>
       <nav className="navbar navbar-expand-lg navbar-light border-bottom py-2">
         <div className="container text-center">
           <Link to="/" className="navbar-brand" href="#">
-            <h4 className="text-primary">Halal-Seles.com</h4>
+            <img src={Logo} width={200} alt="" />
           </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />

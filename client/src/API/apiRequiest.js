@@ -2,7 +2,7 @@ import axios from "axios";
 import unauthorized from "../utility/unauthorized";
 import { setToken, getToken, setUserDetails } from "../helper/SessionHelper";
 
-const BASEURL = "http://www.api.haalalsell.com/api/v1";
+const BASEURL = "http://www.api.haalalsell.com";
 const Headers = { headers: { token: getToken() } };
 export const SliderListRequest = async () => {
   try {
@@ -44,6 +44,7 @@ export async function DetailsListRequest(id) {
   try {
     let result = await axios.get(BASEURL + "/api/v1/ProductDetails/" + id);
     let data = result.data["data"];
+    console.log("details" + data);
     return data;
   } catch (e) {
     return [];

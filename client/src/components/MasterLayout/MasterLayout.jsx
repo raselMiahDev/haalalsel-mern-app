@@ -1,13 +1,11 @@
 import React from 'react';
 import Footer from '../common/Footer';
-import HeaderTwo from '../common/HeaderTwo';
-import TopHeader from '../common/TopHeader';
-import HeaderThree from '../common/HeaderThree';
+import Header from '../common/Header';
 
 const MasterLayout = ({children}) => {
     return (
         <div>
-            <HeaderThree/>
+            <Header/>
             {/* <HeaderTwo/> */}
             {children}
             <Footer/>
