@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import {
   CreateCartListRequest,
   CreateWishListRequest,
-  DetailsListRequest,
 } from "../../API/apiRequiest.js";
 import { useParams } from "react-router-dom";
 import SmilierProduct from "./SmilierProduct.jsx";
@@ -14,6 +13,7 @@ import toast, { Toaster } from "react-hot-toast";
 import SubmitButton from "../common/SubmitButton.jsx";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slice/cartSlice.js";
+import axios from "axios";
 const Details = () => {
   const dispatch = useDispatch();
   let { id } = useParams();
@@ -38,47 +38,48 @@ const Details = () => {
   };
   useEffect(() => {
     (async () => {
-      let result = await DetailsListRequest(id);
-      setData(result);
-
+          let result = await axios.get("http://localhost:5000/api/v1/ProductDetails/"+id);
+          let data = result.data["data"];
+          console.log("details" + data);
+          setData(data);
       setImages([
         {
-          original: result[0]["details"]["img1"],
-          thumbnail: result[0]["details"]["img1"],
+          original: data[0]["details"]["img1"],
+          thumbnail: data[0]["details"]["img1"],
         },
         {
-          original: result[0]["details"]["img2"],
-          thumbnail: result[0]["details"]["img2"],
+          original: data[0]["details"]["img2"],
+          thumbnail: data[0]["details"]["img2"],
         },
         {
-          original: result[0]["details"]["img3"],
-          thumbnail: result[0]["details"]["img3"],
+          original: data[0]["details"]["img3"],
+          thumbnail: data[0]["details"]["img3"],
         },
         {
-          original: result[0]["details"]["img4"],
-          thumbnail: result[0]["details"]["img4"],
+          original: data[0]["details"]["img4"],
+          thumbnail: data[0]["details"]["img4"],
         },
         {
-          original: result[0]["details"]["img5"],
-          thumbnail: result[0]["details"]["img5"],
+          original: data[0]["details"]["img5"],
+          thumbnail: data[0]["details"]["img5"],
         },
         {
-          original: result[0]["details"]["img6"],
-          thumbnail: result[0]["details"]["img6"],
+          original: data[0]["details"]["img6"],
+          thumbnail: data[0]["details"]["img6"],
         },
         {
-          original: result[0]["details"]["img7"],
-          thumbnail: result[0]["details"]["img7"],
+          original: data[0]["details"]["img7"],
+          thumbnail: data[0]["details"]["img7"],
         },
         {
-          original: result[0]["details"]["img8"],
-          thumbnail: result[0]["details"]["img8"],
+          original: data[0]["details"]["img8"],
+          thumbnail: data[0]["details"]["img8"],
         },
       ]);
-      const colorArray = result[0]["details"]["color"].split(",");
+      const colorArray = data[0]["details"]["color"].split(",");
       setColor(colorArray);
 
-      const sizeArray = result[0]["details"]["size"].split(",");
+      const sizeArray = data[0]["details"]["size"].split(",");
       setSize(sizeArray);
     })();
   }, [0]);

@@ -228,15 +228,7 @@ const DetailsById = async (req) => {
     return { status: "fail", data: e.toString() };
   }
 };
-// const DetailsById = async (req) => {
-//   try {
-//     let ProductID = req.params.id;
-//     let data = await ProductsModel.find({ _id: ProductID });
-//     return { status: "success", data: data };
-//   } catch (e) {
-//     return { status: "fail", data: e.toString() };
-//   }
-// };
+
 const SuggestionProducts = async () => {
   try {
     let data = await ProductsModel.find(
