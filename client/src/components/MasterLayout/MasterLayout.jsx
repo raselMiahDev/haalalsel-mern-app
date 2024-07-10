@@ -5,6 +5,7 @@ import Header from '../common/Header';
 const MasterLayout = ({children}) => {
     return (
         <div>
+            <Header/>
             {children}
             <Footer/>
         </div>
