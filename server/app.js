@@ -16,7 +16,11 @@ const cors = require("cors");
 const path = require("path");
 
 //Security Middleware Implement
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://217.15.175.207",
+  })
+);
 app.use(helmet());
 app.use(mongoSanitize());
 app.use(hpp());
