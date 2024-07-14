@@ -79,9 +79,9 @@ const Header = () => {
             </form>
 
             <div className="d-flex py-2 md-py-0">
-              <Link to="/cart" type="button" className="btn ms-3 btn-outline-primary position-relative">
+              <Link to="/cart-list" type="button" className="btn ms-3 btn-outline-primary position-relative">
                 <BsCart2 />
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">02</span>
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"></span>
               </Link>
               {renderAuthButtons()}
             </div>

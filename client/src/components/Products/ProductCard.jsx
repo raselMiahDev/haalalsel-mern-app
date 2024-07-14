@@ -8,11 +8,11 @@ const ProductCard = (props) => {
           <div className="row gy-5">
             {props.data.length > 0 ? (
               props.data.map((item, i) => {
-                let price = <span>${item["price"]} </span>;
+                let price = <span>BDT{item["price"]} </span>;
                 if (item["discount"] === true) {
                   price = (
                     <p className="bodyMedium  text-dark my-1">
-                      Price: <strike>${item["price"]}</strike> $
+                      Price: <strike>${item["price"]}</strike> BDT
                       {item["discountPrice"]}
                     </p>
                   );
@@ -44,7 +44,7 @@ const ProductCard = (props) => {
                           </Link>
 
                           <p>
-                            <span>{price}</span>
+                            <span>{price}</span> BDT
                           </p>
                         </div>
                         <div className="d-flex justify-content-between">

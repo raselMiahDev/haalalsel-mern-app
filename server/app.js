@@ -18,7 +18,7 @@ const path = require("path");
 //Security Middleware Implement
 app.use(
   cors({
-    origin: "http://217.15.175.207",
+    origin: "*",
   })
 );
 app.use(helmet());
