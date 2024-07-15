@@ -38,7 +38,7 @@ const Details = () => {
   };
   useEffect(() => {
     (async () => {
-          let result = await axios.get("http://api.haalalsell.com/api/v1/ProductDetails/"+id);
+          let result = await axios.get("https://api.haalalsell.com/api/v1/ProductDetails/"+id);
           let data = result.data["data"];
           console.log("details" + data);
           setData(data);
