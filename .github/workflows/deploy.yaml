@@ -19,7 +19,6 @@ jobs:
           npm install
           npm run build
           cd ..
-          npm install
       - name: 📦 deploy backend
         run: |
          cd server
