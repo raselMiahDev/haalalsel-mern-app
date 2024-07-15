@@ -1,0 +1,30 @@
+on: push
+name: 🚀 Deploy  Haalalsell 🚀
+jobs:
+  web-deploy:
+    name: 🎉  Build and Deploy
+    runs-on: self-hosted
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: 🔨 Build Frontend
+        run: |
+          cd client
+          npm install
+          npm run build
+          cd ..
+          npm install
+      - name: 📦 deploy backend
+        run: |
+         cd server
+         npm install
+      - name: PM2 Server initialization and Restart nginx
+        run: |
+         pm2 restart all
+         sudo service nginx restart
