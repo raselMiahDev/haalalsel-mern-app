@@ -16,7 +16,9 @@ const cors = require("cors");
 const path = require("path");
 
 //Security Middleware Implement
-app.use(cors());
+app.use(cors({
+  origin:'*'
+}));
 app.use(helmet());
 app.use(mongoSanitize());
 app.use(hpp());

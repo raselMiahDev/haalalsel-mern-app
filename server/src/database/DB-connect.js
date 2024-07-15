@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+const { mongoUrl } = require("../config");
 require("colors");
 const connectDB = async () => {
     try {
-        const connect = await mongoose.connect(process.env.MONGO_URL, {
+        const connect = await mongoose.connect(mongoUrl, {
             useNewUrlParser: true,
         });
         console.log(`Mongodb Is Connected ${connect.connection.host}`.bgYellow);
