@@ -2,7 +2,7 @@ import axios from "axios";
 import unauthorized from "../utility/unauthorized";
 import { setToken, getToken, setUserDetails } from "../helper/SessionHelper";
 
-const BASEURL = "http://www.api.haalalsell.com";
+const BASEURL = "https://api.haalalsell.com";
 const Headers = { headers: { token: getToken() } };
 export const SliderListRequest = async () => {
   try {

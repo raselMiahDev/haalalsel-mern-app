@@ -40,7 +40,15 @@ app.use("/api/v1", router);
 
 app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  res.json({
+    status:404,
+    message: "Page not found",
+    error: null,
+  });
 });
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname,"..", "client", "dist", "index.html"));
+// });
 
 module.exports = app;
