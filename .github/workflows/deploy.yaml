@@ -26,4 +26,4 @@ jobs:
       - name: PM2 Server initialization and Restart nginx
         run: |
          pm2 restart all
-         service nginx restart
+         sudo service nginx restart
