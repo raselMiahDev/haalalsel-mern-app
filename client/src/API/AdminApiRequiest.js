@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getToken } from "../helper/SessionHelper";
-const BASEURL = "http://www.api.haalalsell.com/api/v1";
+const BASEURL = "https://api.haalalsell.com/api/v1";
 const Headers = { headers: { token: getToken() } };
 
 export const CreateCategoryRequiest = async (categoryName, categoryImg) => {
